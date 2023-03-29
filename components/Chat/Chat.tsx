@@ -120,12 +120,12 @@ export const Chat: FC<Props> = ({
           <div className="text-center text-gray-500 dark:text-gray-400">
             {t("If you don't have an OpenAI API key, you can get one here: ")}
             <a
-              href="https://platform.openai.com/account/api-keys"
+              href="https://shop.habab.ru/"
               target="_blank"
               rel="noreferrer"
               className="text-blue-500 hover:underline"
             >
-              openai.com
+              https://shop.habab.ru/
             </a>
           </div>
         </div>
