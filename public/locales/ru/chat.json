@@ -1,10 +1,10 @@
 {
-  "OpenAI API Key Required": "Необходим ключ OpenAI",
-  "Please set your OpenAI API key in the bottom left of the sidebar.": "Пожалуйста введите API-ключ OpenAI в левом нижнем углу",
+  "OpenAI API Key Required": "Купите доступ",
+  "Please set your OpenAI API key in the bottom left of the sidebar.": "Пожалуйста введите ключ в левом нижнем углу",
   "Stop Generating": "Прекратить",
   "Prompt limit is {{maxLength}} characters": "Лимит сообщения на символы: {{maxLength}} символов",
   "System Prompt": "Системное сообщение",
-  "You are ChatGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.": "Вы ChatGPT, большая языковая модель, созданная компанией OpenAI. Следуйте инструкциям пользователя. Отвечайте на сообщения, используя Markdown",
+  "You are ChatGPT, a large language model trained by OpenAI. Follow the user's instructions carefully. Respond using markdown.": "Вы ChatGPT, отвечайте на сообщения, используя Markdown",
   "Enter a prompt": "Введите сообщение",
   "Regenerate response": "Сгенерировать сообщение снова",
   "Sorry, there was an error.": "Просим прощения, произошла ошибка",
