@@ -1,7 +1,7 @@
 {
   "OpenAI API Key Required": "Купите доступ",
   "Please set your OpenAI API key in the bottom left of the sidebar.": "Пожалуйста введите ключ в левом нижнем углу",
-  "If you don't have an OpenAI API key, you can get one here: ": "Если у вас нет ключа, купите один тут (500р)",
+  "If you don't have an OpenAI API key, you can get one here: ": "Если у вас нет ключа, купите один тут (500р) ",
   "Stop Generating": "Прекратить",
   "Prompt limit is {{maxLength}} characters": "Лимит сообщения на символы: {{maxLength}} символов",
   "System Prompt": "Системное сообщение",
