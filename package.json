@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "buildstatic": "next build && next export && node prepare-static",
     "lint": "next lint",
     "format": "prettier --write ."
   },

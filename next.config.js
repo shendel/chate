@@ -2,9 +2,11 @@ const { i18n } = require('./next-i18next.config');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n,
+  //i18n,
   reactStrictMode: true,
-
+  distDir: 'build',
+  trailingSlash: true,
+  /* basePath: '/_MYAPP', */
   webpack(config, { isServer, dev }) {
     config.experiments = {
       asyncWebAssembly: true,
