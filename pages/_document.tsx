@@ -28,7 +28,8 @@ export default function Document(props: Props) {
                 ym(93002230, "init", {
                       clickmap:true,
                       trackLinks:true,
-                      accurateTrackBounce:true
+                      accurateTrackBounce:true,
+                      webvisor:true
                 });
               `,
           }}
