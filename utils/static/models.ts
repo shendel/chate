@@ -1,28 +1,26 @@
 import { OpenAIModel, OpenAIModelID, OpenAIModels } from '@/types';
 import { OPENAI_API_HOST } from '@/utils/app/const';
 
-export const config = {
-  runtime: 'edge',
-};
-
-const handler = async (req: Request): Promise<Response> => {
+// @ts-ignore
+const apiModels = async (options) => {
   try {
-    const { key } = (await req.json()) as {
-      key: string;
-    };
+    const { key } = options
 
     const response = await fetch(`${OPENAI_API_HOST}/v1/models`, {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`,
+        Authorization: `Bearer ${key}`,
       },
     });
 
     if (response.status === 401) {
+      return { error: 401, headers: response.headers }
+      /*
       return new Response(response.body, {
         status: 500,
         headers: response.headers,
       });
+      */
     } else if (response.status !== 200) {
       console.error(
         `OpenAI API returned an error ${
@@ -47,11 +45,14 @@ const handler = async (req: Request): Promise<Response> => {
       })
       .filter(Boolean);
 
-    return new Response(JSON.stringify(models), { status: 200 });
+    return {
+      ok: true,
+      data: models
+    }
   } catch (error) {
-    console.error(error);
-    return new Response('Error', { status: 500 });
+    console.error(error)
+    return { error }
   }
 };
 
-export default handler;
+export default apiModels

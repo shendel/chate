@@ -15,7 +15,7 @@ export const OpenAIStream = async (
   const res = await fetch(`${OPENAI_API_HOST}/v1/chat/completions`, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${key ? key : process.env.OPENAI_API_KEY}`,
+      Authorization: `Bearer ${key}`,
     },
     method: 'POST',
     body: JSON.stringify({
@@ -63,10 +63,15 @@ export const OpenAIStream = async (
         }
       };
 
-      const parser = createParser(onParse);
+      const parser = createParser(onParse)
+      const reader = res.body.getReader()
 
-      for await (const chunk of res.body as any) {
-        parser.feed(decoder.decode(chunk));
+      while(true) {
+        const {done, value} = await reader.read()
+        if (done) {
+          break;
+        }
+        parser.feed(decoder.decode(value));
       }
     },
   });

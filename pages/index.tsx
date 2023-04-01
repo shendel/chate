@@ -32,13 +32,14 @@ import { useEffect, useRef, useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
-import { apiModels } from './api/models'
-import { apiChat } from './api/chat'
+import apiModels from '@/utils/static/models'
+import apiChat from '@/utils/static/chat'
 
 
 interface HomeProps {
   serverSideApiKeyIsSet: boolean;
 }
+
 
 const Home: NextPage<HomeProps> = ({ serverSideApiKeyIsSet }) => {
   const { t } = useTranslation('chat');
@@ -109,9 +110,6 @@ const Home: NextPage<HomeProps> = ({ serverSideApiKeyIsSet }) => {
         return;
       }
 
-      const data = response.body;
-      console.log('>>> data', data)
-
       if (!response.ok) {
         setLoading(false);
         setMessageIsStreaming(false);
@@ -127,11 +125,10 @@ const Home: NextPage<HomeProps> = ({ serverSideApiKeyIsSet }) => {
         return;
       }
 
-*/
+      */
 
  
       const data = await apiChat(chatBody)
-      console.log('>>> data', data)
 
 
       if (updatedConversation.messages.length === 1) {
@@ -146,7 +143,7 @@ const Home: NextPage<HomeProps> = ({ serverSideApiKeyIsSet }) => {
       }
 
       setLoading(false);
-
+      // @ts-ignore
       const reader = data.getReader();
       const decoder = new TextDecoder();
       let done = false;
