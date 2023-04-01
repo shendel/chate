@@ -64,6 +64,7 @@ export const OpenAIStream = async (
       };
 
       const parser = createParser(onParse)
+      // @ts-ignore
       const reader = res.body.getReader()
 
       while(true) {
