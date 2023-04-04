@@ -38,10 +38,11 @@ import apiChat from '@/utils/static/chat'
 
 interface HomeProps {
   serverSideApiKeyIsSet: boolean;
+  appSettings: any;
 }
 
 
-const Home: NextPage<HomeProps> = ({ serverSideApiKeyIsSet }) => {
+const Home: NextPage<HomeProps> = ({ serverSideApiKeyIsSet, appSettings }) => {
   const { t } = useTranslation('chat');
   const [folders, setFolders] = useState<ChatFolder[]>([]);
   const [conversations, setConversations] = useState<Conversation[]>([]);
